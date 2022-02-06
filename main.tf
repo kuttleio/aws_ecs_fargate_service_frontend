@@ -36,8 +36,9 @@ resource "aws_ecs_service" "aws_ecs_fargate_service" {
   }
 
   network_configuration {
-    security_groups = var.security_groups
-    subnets         = var.subnets
+    security_groups   = var.security_groups
+    subnets           = var.subnets
+    assign_public_ip  = true
   }
 
   load_balancer {
